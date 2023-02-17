@@ -23,7 +23,9 @@
     "types:check:tsc": "tsc --noEmit"
   },
   "dependencies": {
+    "@vaadin/app-layout": "^23.3.7",
     "@vaadin/router": "^1.7.4",
+    "import": "^0.0.6",
     "lit": "^2.6.1",
     "pwa-helper-components": "~0.2.10",
     "tslib": "^2.5.0"
