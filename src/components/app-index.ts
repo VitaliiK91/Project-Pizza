@@ -10,13 +10,16 @@ import { customElement, query } from 'lit/decorators.js';
 
 import config from '../config.js';
 import { attachRouter, urlForName } from '../router/index.js';
+import '@vaadin/app-layout';
+import '@vaadin/tabs';
+import '@vaadin/tabs/vaadin-tab.js';
 
 import 'pwa-helper-components/pwa-install-button.js';
 import 'pwa-helper-components/pwa-update-available.js';
 
 @customElement('app-index')
 export class AppIndex extends LitElement {
-  @query('main')
+  @query('#outlet')
   private main!: HTMLElement;
 
   static styles = css`
@@ -75,11 +78,11 @@ export class AppIndex extends LitElement {
 
   render() {
     return html`
-      <header>
-        <nav>
-          <a href="${urlForName('home')}">Home</a>
-          <a href="${urlForName('about')}">About</a>
-        </nav>
+      <vaadin-app-layout>
+        <vaadin-tabs>
+          <vaadin-tab><a href="${urlForName('home')}">Главная</a></vaadin-tab>
+          <vaadin-tab><a href="${urlForName('menu')}">Меню</a></vaadin-tab>
+        </vaadin-tabs>
 
         <pwa-install-button>
           <button>Install app</button>
@@ -88,14 +91,14 @@ export class AppIndex extends LitElement {
         <pwa-update-available>
           <button>Update app</button>
         </pwa-update-available>
-      </header>
 
-      <!-- The main content is added / removed dynamically by the router -->
-      <main role="main"></main>
+        <!-- The main content is added / removed dynamically by the router -->
+        <main id="outlet" role="main"></main>
 
-      <footer>
-        <span>Environment: ${config.environment}</span>
-      </footer>
+        <footer>
+          <span>Environment: ${config.environment}</span>
+        </footer>
+      </vaadin-app-layout>
     `;
   }
 

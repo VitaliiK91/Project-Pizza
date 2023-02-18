@@ -17,11 +17,11 @@ export const routes: Route[] = [
     },
   },
   {
-    path: '/about',
-    name: 'about',
-    component: 'page-about',
+    path: '/menu',
+    name: 'menu',
+    component: 'page-menu',
     action: async () => {
-      await import('../pages/page-about.js');
+      await import('../pages/page-menu.js');
     },
   },
   {
