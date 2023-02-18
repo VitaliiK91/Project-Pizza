@@ -1596,6 +1596,18 @@
     "@vaadin/vaadin-themable-mixin" "~23.3.7"
     lit "^2.0.0"
 
+"@vaadin/item@~23.3.7":
+  version "23.3.7"
+  resolved "https://registry.yarnpkg.com/@vaadin/item/-/item-23.3.7.tgz#0b087c9c5da989e27c3b7532b99e5326ff345878"
+  integrity sha512-BHYhJdtG1WwDu+7bFZgBBW+NhI9CG2M42Oei2J3wStj5w3tc13D3Wea6XXPjbIEs5v2n+Y1wNIhXziuKGDLWLw==
+  dependencies:
+    "@open-wc/dedupe-mixin" "^1.3.0"
+    "@polymer/polymer" "^3.0.0"
+    "@vaadin/component-base" "~23.3.7"
+    "@vaadin/vaadin-lumo-styles" "~23.3.7"
+    "@vaadin/vaadin-material-styles" "~23.3.7"
+    "@vaadin/vaadin-themable-mixin" "~23.3.7"
+
 "@vaadin/router@^1.7.4":
   version "1.7.4"
   resolved "https://registry.yarnpkg.com/@vaadin/router/-/router-1.7.4.tgz#76d78d0091275cadf1ac18f0e8b75bf0fd6fe253"
@@ -1604,10 +1616,32 @@
     "@vaadin/vaadin-usage-statistics" "^2.1.0"
     path-to-regexp "2.4.0"
 
+"@vaadin/tabs@^23.3.7":
+  version "23.3.7"
+  resolved "https://registry.yarnpkg.com/@vaadin/tabs/-/tabs-23.3.7.tgz#3c63193c56d89bb2c336596be8298334b8176840"
+  integrity sha512-nS/qkZVFH1xWVvog/9ZmcdvpAEehte6pTVbQ4Kiu+mr3/FPcEq/ndXtUj94t2XIV33Z8kmbhBV5Nzu+/twI5rA==
+  dependencies:
+    "@polymer/polymer" "^3.0.0"
+    "@vaadin/component-base" "~23.3.7"
+    "@vaadin/item" "~23.3.7"
+    "@vaadin/vaadin-list-mixin" "~23.3.7"
+    "@vaadin/vaadin-lumo-styles" "~23.3.7"
+    "@vaadin/vaadin-material-styles" "~23.3.7"
+    "@vaadin/vaadin-themable-mixin" "~23.3.7"
+
 "@vaadin/vaadin-development-mode-detector@^2.0.0":
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/@vaadin/vaadin-development-mode-detector/-/vaadin-development-mode-detector-2.0.5.tgz#5098216dae30d8eeabe46c7cbe494a352fe09691"
   integrity sha512-miirBQw10UHjKwRv29iZniXCo41cLg3wFotoyTeUZ2PTGIDk/fZVFr4Q4WVKZrp3D15878vz94nNQROSmPLjdg==
+
+"@vaadin/vaadin-list-mixin@~23.3.7":
+  version "23.3.7"
+  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-list-mixin/-/vaadin-list-mixin-23.3.7.tgz#b37b667c3c6ade8d7c70a2991cee06040f3556d7"
+  integrity sha512-3+yA+6CbKD8MUK5PCEoXBK38LPoR1wKSGDoqJH4mMH+NX8rMaodOwuFf/+kM+kSYrTIbfUyalgRfhJq9IShjhQ==
+  dependencies:
+    "@open-wc/dedupe-mixin" "^1.3.0"
+    "@polymer/polymer" "^3.0.0"
+    "@vaadin/component-base" "~23.3.7"
 
 "@vaadin/vaadin-lumo-styles@~23.3.7":
   version "23.3.7"
