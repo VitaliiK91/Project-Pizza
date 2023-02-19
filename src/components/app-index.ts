@@ -82,6 +82,9 @@ export class AppIndex extends LitElement {
         <vaadin-tabs>
           <vaadin-tab><a href="${urlForName('home')}">Главная</a></vaadin-tab>
           <vaadin-tab><a href="${urlForName('menu')}">Меню</a></vaadin-tab>
+          <vaadin-tab
+            ><a href="${urlForName('contact')}">Контакты</a></vaadin-tab
+          >
         </vaadin-tabs>
 
         <pwa-install-button>
@@ -94,11 +97,10 @@ export class AppIndex extends LitElement {
 
         <!-- The main content is added / removed dynamically by the router -->
         <main id="outlet" role="main"></main>
-
-        <footer>
-          <span>Environment: ${config.environment}</span>
-        </footer>
       </vaadin-app-layout>
+      <footer>
+        <span>Environment: ${config.environment}</span>
+      </footer>
     `;
   }
 

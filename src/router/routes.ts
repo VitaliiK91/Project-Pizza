@@ -25,6 +25,14 @@ export const routes: Route[] = [
     },
   },
   {
+    path: '/contact',
+    name: 'contact',
+    component: 'page-contact',
+    action: async () => {
+      await import('../pages/page-contact.js');
+    },
+  },
+  {
     path: '(.*)',
     name: 'not-found',
     component: 'page-not-found',
