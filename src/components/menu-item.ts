@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import { property } from 'lit/decorators.js';
 
 class MenuItemCard extends LitElement {
-  @property({ type: String }) image = '';
+  @property({ type: String }) imageURL = '';
   @property({ type: String }) name = '';
   @property({ type: String }) description = '';
   @property({ type: Array }) ingredients: Array<string> = [];
@@ -83,7 +83,7 @@ class MenuItemCard extends LitElement {
     return html`
       <div class="card">
         <div class="image-container">
-          <img class="image" src="${this.image}" alt="${this.name}" />
+          <img class="image" src="${this.imageURL}" alt="${this.name}" />
         </div>
         <div class="content">
           <div class="name">${this.name}</div>
