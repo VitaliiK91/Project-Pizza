@@ -32,7 +32,7 @@ export class PageMenu extends PageElement {
         ${repeat(
           this.items,
           (item) => item.name,
-          (item, index) => html` <menu-item-card
+          (item) => html` <menu-item-card
             .imageURL=${item.imageURL}
             .name=${item.name}
             .description=${item.description}
