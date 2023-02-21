@@ -19,6 +19,7 @@ export class PageMenu extends PageElement {
     section {
       padding: 1rem;
     }
+
     menu-item-card {
       margin: 2px;
     }
