@@ -30,6 +30,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
       - name: Install dependencies
         run: yarn
       - name: Build app
@@ -39,8 +41,6 @@ jobs:
         with:
           name: server-dist
           path: './server/dist'
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
