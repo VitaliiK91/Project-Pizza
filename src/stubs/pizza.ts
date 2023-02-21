@@ -1,4 +1,4 @@
-interface MenuItem {
+export interface MenuItem {
   name: string;
   imageURL: string;
   description: string;
