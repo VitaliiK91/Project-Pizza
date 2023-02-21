@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { property, state } from 'lit/decorators.js';
+import { repeat } from 'lit/directives/repeat.js';
 
 interface CarouselItem {
   name: string;
@@ -10,7 +11,9 @@ export class Carousel extends LitElement {
   @property({ type: Array }) items: CarouselItem[] = [];
   @property({ type: Boolean }) autoplay = true;
   @property({ type: Number }) autoplayDelay = 5000;
+
   @state() currentSlide = 0;
+
   private timerId?: NodeJS.Timer;
 
   static styles = css`
@@ -36,16 +39,16 @@ export class Carousel extends LitElement {
     }
 
     .caption {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      position: relative;
+      bottom: 10%;
+      left: 50%;
       padding: 16px;
       background-color: rgb(0 0 0 / 70%);
       color: white;
       font-weight: bold;
       font-size: 18px;
       text-align: center;
+      transform: translateX(-50%);
     }
   `;
 
@@ -78,7 +81,9 @@ export class Carousel extends LitElement {
           class="slide-container"
           style="transform: translateX(-${this.currentSlide * 100}%)"
         >
-          ${this.items.map(
+          ${repeat(
+            this.items,
+            (item) => item.name,
             (item) => html`
               <div class="slide">
                 <img class="image" src="${item.image}" alt="${item.name}" />

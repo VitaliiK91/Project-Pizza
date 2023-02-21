@@ -10,6 +10,8 @@ import { customElement } from 'lit/decorators.js';
 
 import config from '../config.js';
 import { PageElement } from '../helpers/page-element.js';
+import '../components/carousel.js';
+import { menuItems } from '../stubs/pizza.js';
 
 @customElement('page-home')
 export class PageHome extends PageElement {
@@ -24,12 +26,14 @@ export class PageHome extends PageElement {
       <section>
         <h1>Home</h1>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi,
-          delectus? Unde, sit. Fuga modi ea praesentium. Nemo dicta qui, magnam
-          cum dolorum excepturi beatae explicabo quidem fugiat ullam blanditiis
-          minima!
-        </p>
+        <carousel-component
+          .items=${menuItems.map((pizza) => ({
+            name: pizza.name,
+            image: pizza.imageURL,
+          }))}
+        >
+          ></carousel-component
+        >
 
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi,

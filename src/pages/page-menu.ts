@@ -7,9 +7,11 @@
 
 import { html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { repeat } from 'lit/directives/repeat.js';
 
 import { PageElement } from '../helpers/page-element.js';
 import '../components/menu-item.js';
+import { menuItems } from '../stubs/pizza.js';
 
 @customElement('page-menu')
 export class PageMenu extends PageElement {
@@ -17,41 +19,26 @@ export class PageMenu extends PageElement {
     section {
       padding: 1rem;
     }
+    menu-item-card {
+      margin: 2px;
+    }
   `;
+  private items = menuItems;
 
   render() {
     return html`
       <section>
-        <h1>Menu</h1>
-        <menu-item-card
-          .image=${'https://mrmotopizza.com/wp-content/uploads/2022/09/Mr-Moto-Pizza-pepperoni.jpg'}
-          .name=${'Pepperoni Pizza'}
-          .description=${'A classic pizza with spicy pepperoni and mozzarella cheese'}
-          .ingredients="${[
-            'Pepperoni',
-            'Mozzarella cheese',
-            'Tomato sauce',
-            'Basil',
-          ]}"
-        ></menu-item-card>
-        <menu-item-card
-          .image=${'https://mrmotopizza.com/wp-content/uploads/2022/09/Mr-Moto-Pizza-red-chunky-mess.jpg'}
-          .name=${'Pepperoni Pizza'}
-          .description=${'A classic pizza with spicy pepperoni and mozzarella cheese'}
-          .ingredients="${[
-            'Pepperoni',
-            'Mozzarella cheese',
-            'Tomato sauce',
-            'Basil',
-          ]}"
-        ></menu-item-card>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi,
-          delectus? Unde, sit. Fuga modi ea praesentium. Nemo dicta qui, magnam
-          cum dolorum excepturi beatae explicabo quidem fugiat ullam blanditiis
-          minima!
-        </p>
+        <h1>Пицца</h1>
+        ${repeat(
+          this.items,
+          (item) => item.name,
+          (item, index) => html` <menu-item-card
+            .imageURL=${item.imageURL}
+            .name=${item.name}
+            .description=${item.description}
+            .ingredients="${item.ingredients}"
+          ></menu-item-card>`
+        )}
       </section>
     `;
   }
@@ -59,7 +46,7 @@ export class PageMenu extends PageElement {
   meta() {
     return {
       title: 'Menu',
-      description: 'About page description',
+      description: 'Menu page description',
     };
   }
 }
