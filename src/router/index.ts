@@ -14,19 +14,18 @@ const router = new Router(null, { baseUrl: '/Project-Pizza' });
 
 router.setRoutes([
   {
-    path: '/Project-Pizza',
-    children: [
-      // Redirect to URL without trailing slash
-      {
-        path: '(.*)/',
-        action: (context, commands) => {
-          const newPath = context.pathname.slice(0, -1);
-          return commands.redirect(newPath);
-        },
-      },
-      ...routes,
-    ],
+    path: 'Project-Pizza',
+    redirect: '/',
   },
+  // Redirect to URL without trailing slash
+  {
+    path: '(.*)/',
+    action: (context, commands) => {
+      const newPath = context.pathname.slice(0, -1);
+      return commands.redirect(newPath);
+    },
+  },
+  ...routes,
 ]);
 
 export const attachRouter = (outlet: HTMLElement) => {
