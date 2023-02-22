@@ -11,7 +11,15 @@ import { repeat } from 'lit/directives/repeat.js';
 
 import { PageElement } from '../helpers/page-element.js';
 import '../components/menu-item.js';
-import { MenuItem, menuItems } from '../stubs/pizza.js';
+import {
+  MenuItem,
+  pizza,
+  appetizers,
+  salads,
+  soups,
+  pastaAndRisotto,
+  desert,
+} from '../stubs/pizza.js';
 
 import '@vaadin/tabs';
 import '@vaadin/tabs/vaadin-tab.js';
@@ -35,12 +43,12 @@ export class PageMenu extends PageElement {
   }
 
   private sections = [
-    { id: '0', label: 'Закуски', items: [] },
-    { id: '1', label: 'Салаты', items: [] },
-    { id: '2', label: 'Супы', items: [] },
-    { id: '3', label: 'Пицца', items: menuItems },
-    { id: '4', label: 'Паста и ризотто', items: [] },
-    { id: '5', label: 'Десерт', items: [] },
+    { id: '0', label: 'Закуски', items: appetizers },
+    { id: '1', label: 'Салаты', items: salads },
+    { id: '2', label: 'Супы', items: soups },
+    { id: '3', label: 'Пицца', items: pizza },
+    { id: '4', label: 'Паста и ризотто', items: pastaAndRisotto },
+    { id: '5', label: 'Десерт', items: desert },
   ];
 
   render() {
