@@ -11,7 +11,7 @@ import { customElement } from 'lit/decorators.js';
 import config from '../config.js';
 import { PageElement } from '../helpers/page-element.js';
 import '../components/carousel.js';
-import { menuItems } from '../stubs/pizza.js';
+import { appetizers } from '../stubs/menu-items.js';
 
 @customElement('page-home')
 export class PageHome extends PageElement {
@@ -27,7 +27,7 @@ export class PageHome extends PageElement {
         <h1>Home</h1>
 
         <carousel-component
-          .items=${menuItems.map((pizza) => ({
+          .items=${appetizers.map((pizza) => ({
             name: pizza.name,
             image: pizza.imageURL,
           }))}

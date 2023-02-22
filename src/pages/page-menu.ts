@@ -19,7 +19,7 @@ import {
   soups,
   pastaAndRisotto,
   desert,
-} from '../stubs/pizza.js';
+} from '../stubs/menu-items.js';
 
 import '@vaadin/tabs';
 import '@vaadin/tabs/vaadin-tab.js';
