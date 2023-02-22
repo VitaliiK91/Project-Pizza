@@ -10,6 +10,10 @@ import type { Route } from '@vaadin/router';
 export const routes: Route[] = [
   {
     path: '/',
+    redirect: '/Project-Pizza/home',
+  },
+  {
+    path: '/home',
     name: 'home',
     component: 'page-home',
     action: async () => {

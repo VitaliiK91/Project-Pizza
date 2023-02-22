@@ -10,18 +10,23 @@ import type { Params } from '@vaadin/router';
 
 import { routes } from './routes.js';
 
-const router = new Router(null, { baseUrl: '../' });
+const router = new Router(null, { baseUrl: '/Project-Pizza' });
 
 router.setRoutes([
-  // Redirect to URL without trailing slash
   {
-    path: '(.*)/',
-    action: (context, commands) => {
-      const newPath = context.pathname.slice(0, -1);
-      return commands.redirect(newPath);
-    },
+    path: '/Project-Pizza',
+    children: [
+      // Redirect to URL without trailing slash
+      {
+        path: '(.*)/',
+        action: (context, commands) => {
+          const newPath = context.pathname.slice(0, -1);
+          return commands.redirect(newPath);
+        },
+      },
+      ...routes,
+    ],
   },
-  ...routes,
 ]);
 
 export const attachRouter = (outlet: HTMLElement) => {
