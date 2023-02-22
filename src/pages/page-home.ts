@@ -12,6 +12,8 @@ import config from '../config.js';
 import { PageElement } from '../helpers/page-element.js';
 import '../components/carousel.js';
 import { appetizers } from '../stubs/menu-items.js';
+import '../components/deal-card.js';
+import '../components/deal-card-container.js';
 
 @customElement('page-home')
 export class PageHome extends PageElement {
@@ -24,7 +26,42 @@ export class PageHome extends PageElement {
   render() {
     return html`
       <section>
-        <h1>Home</h1>
+        <h1>Акции</h1>
+        <deal-card-container>
+          <deal-card
+            .name=${'Пепперони пицца'}
+            .description=${'Специальное предложение - пепперони пицца всего за 500 руб!'}
+            .price=${500}
+          >
+          </deal-card>
+          <deal-card
+            .name=${'Греческий салат'}
+            .description=${'Специальное предложение - греческий салат всего за 290 руб!'}
+            .price=${290}
+          >
+          </deal-card>
+
+          <deal-card
+            .name=${'Спагетти карбонара'}
+            .description=${'Специальное предложение - спагетти карбонара всего за 450 руб!'}
+            .price=${450}
+          >
+          </deal-card>
+
+          <deal-card
+            .name=${'Десерт Тирамису'}
+            .description=${'Специальное предложение - десерт Тирамису всего за 250 руб!'}
+            .price=${250}
+          >
+          </deal-card>
+
+          <deal-card
+            .name=${'Чизкейк Нью-Йорк'}
+            .description=${'Специальное предложение - чизкейк Нью-Йорк всего за 350 руб!'}
+            .price=${350}
+          >
+          </deal-card>
+        </deal-card-container>
 
         <carousel-component
           .items=${appetizers.map((pizza) => ({
