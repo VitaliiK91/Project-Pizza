@@ -8,6 +8,8 @@ export class ContactInfo extends LitElement {
       .card {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 16px;
         border: 1px solid gray;
         border-radius: 4px;
@@ -46,15 +48,26 @@ export class ContactInfo extends LitElement {
   email = '';
   @property({ type: String })
   address = '';
+  @property({ type: String })
+  geo = '';
 
   render() {
     return html`
       <div class="card">
-        <div class="title">Contact Information</div>
-        <div class="hours">${this.hours}</div>
-        <div class="phone">${this.phone}</div>
-        <div class="email">${this.email}</div>
-        <div class="address">${this.address}</div>
+        <div class="title">Контактная информация</div>
+        <div class="hours">🕖 ${this.hours}</div>
+        <div class="phone">
+          📱 <a href="tel:${this.phone}">${this.phone}</a>
+        </div>
+        <div class="email">
+          📧 <a href="mailto:${this.email}">${this.email}</a>
+        </div>
+        <div class="address">
+          🌐
+          <a href="geo:${this.geo}?q=${encodeURIComponent(this.address)}"
+            >${this.address}</a
+          >
+        </div>
       </div>
     `;
   }

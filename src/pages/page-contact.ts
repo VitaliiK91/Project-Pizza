@@ -22,13 +22,12 @@ export class PageContact extends PageElement {
   render() {
     return html`
       <section>
-        <h1>Contact</h1>
-
         <contact-info
-          hours="Monday - Friday: 9am - 10pm, Saturday - Sunday: 11am - 9pm"
-          phone="(123) 456-7890"
+          hours="Ежедневно: 12:00 - 22:00"
+          phone="+7 (981) 264-58-24"
           email="info@pizzacafe.com"
-          address="123 Main St, Anytown, USA"
+          address="Приморская улица, 64, Лебяжье, Ленинградская область"
+          geo="59.960979, 29.418738"
         ></contact-info>
 
         <p>
