@@ -11,7 +11,6 @@ import { customElement } from 'lit/decorators.js';
 import config from '../config.js';
 import { PageElement } from '../helpers/page-element.js';
 import '../components/carousel.js';
-import { appetizers } from '../stubs/menu-items.js';
 import '../components/deal-card.js';
 import '../components/deal-card-container.js';
 
@@ -26,7 +25,6 @@ export class PageHome extends PageElement {
   render() {
     return html`
       <section>
-        <h1>Акции</h1>
         <deal-card-container>
           <deal-card
             .name=${'День рождения'}
@@ -42,20 +40,16 @@ export class PageHome extends PageElement {
             .deal=${'Скидка 10%'}
             .image=${'images/pizza-to-go.jpg'}
           >
-            >
+          </deal-card>
+
+          <deal-card
+            .name=${'Пиво в подарок'}
+            .description=${'Купите одно пиво до 4PM и получите второе бесплатно'}
+            .deal=${'\u{1F37B}'}
+            .image=${'images/beers.jpg'}
+          >
           </deal-card>
         </deal-card-container>
-
-        <carousel-component
-          .items=${appetizers.map((pizza) => ({
-            name: pizza.name,
-            image: pizza.imageURL,
-          }))}
-        >
-          ></carousel-component
-        >
-
-        <p>Here you can see <a href="/error">the not found page</a>.</p>
       </section>
     `;
   }
