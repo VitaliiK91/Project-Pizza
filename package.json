@@ -27,6 +27,7 @@
     "@vaadin/button": "^23.3.8",
     "@vaadin/router": "^1.7.4",
     "@vaadin/tabs": "^23.3.8",
+    "@vaadin/tabsheet": "^23.3.8",
     "import": "^0.0.6",
     "lit": "^2.6.1",
     "pwa-helper-components": "~0.2.10",
