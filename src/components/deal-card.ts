@@ -4,7 +4,8 @@ import { property } from 'lit/decorators.js';
 interface DealCardProps {
   name: string;
   description: string;
-  price: number;
+  deal: string;
+  image: string;
 }
 
 export class DealCard extends LitElement implements DealCardProps {
@@ -29,40 +30,76 @@ export class DealCard extends LitElement implements DealCardProps {
 
     h2 {
       margin: 0;
-      font-size: 1.5rem;
+      color: #ff4500;
+      font-size: 2rem;
     }
 
-    h3 {
-      margin: 0;
-      font-size: 1.2rem;
+    p {
+      margin: 0 0 1rem;
+      color: #666;
+      font-size: 1rem;
+      text-align: center;
     }
 
     .price {
       margin-top: auto;
-      font-size: 2rem;
+      color: #ff4500;
+      font-size: 2.5rem;
+    }
+
+    .image {
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+      background-position: center;
+      background-size: cover;
+    }
+
+    button {
+      margin-top: auto;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff4500;
+      color: #fff;
+      font-size: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #e53e3e;
     }
   `;
 
+  @property({ type: String })
+  name: string;
+
+  @property({ type: String })
+  description: string;
+
+  @property({ type: String })
+  deal: string;
+
+  @property({ type: String })
+  image: string;
 
   constructor() {
     super();
 
     this.name = '';
     this.description = '';
-    this.price = 0;
+    this.deal = '';
+    this.image = '';
   }
-  @property({ type: String })
-    name: string;
-  @property({ type: String })
-    description: string;
-  @property({ type: Number })
-    price: number;
 
   render() {
     return html`
+      <div class="image" style="background-image: url(${this.image})"></div>
       <h2>${this.name}</h2>
       <p>${this.description}</p>
-      <h3 class="price">${this.price} руб</h3>
+      <h3 class="price">${this.deal}</h3>
     `;
   }
 }

@@ -11,8 +11,9 @@ export class DealCardContainer extends LitElement {
 
     h2 {
       margin: 20px 0;
+      color: #ff4500;
       font-weight: 500;
-      font-size: 24px;
+      font-size: 2.5rem;
       text-align: center;
     }
 
@@ -27,6 +28,24 @@ export class DealCardContainer extends LitElement {
     ::slotted(deal-card) {
       width: 100%;
       max-width: 350px;
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff4500;
+      color: #fff;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #e53e3e;
     }
 
     @media (min-width: 768px) {
