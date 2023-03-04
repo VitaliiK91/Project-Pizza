@@ -1,11 +1,10 @@
-import { html, css } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
+import { css, html } from 'lit';
+import { customElement } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 
 import { PageElement } from '../helpers/page-element.js';
 import '../components/menu-item.js';
 import {
-  MenuItem,
   pizza,
   appetizers,
   salads,
@@ -14,8 +13,10 @@ import {
   desert,
 } from '../stubs/menu-items.js';
 
+import '@vaadin/tabsheet';
 import '@vaadin/tabs';
 import '@vaadin/tabs/vaadin-tab.js';
+import '../components/tab-content.js';
 
 @customElement('page-menu')
 export class PageMenu extends PageElement {
@@ -29,46 +30,50 @@ export class PageMenu extends PageElement {
     }
   `;
 
-  @state()
-  currentSectionID = 0;
-  get currentSection(): { id: string; label: string; items: MenuItem[] } {
-    return this.sections[this.currentSectionID];
-  }
-
   private sections = [
-    { id: '0', label: 'Закуски', items: appetizers },
-    { id: '1', label: 'Салаты', items: salads },
-    { id: '2', label: 'Супы', items: soups },
-    { id: '3', label: 'Пицца', items: pizza },
-    { id: '4', label: 'Паста и ризотто', items: pastaAndRisotto },
-    { id: '5', label: 'Десерт', items: desert },
+    { id: '0', label: 'Закуски', items: appetizers, imageSrc: '' },
+    { id: '1', label: 'Салаты', items: salads, imageSrc: '' },
+    { id: '2', label: 'Супы', items: soups, imageSrc: '' },
+    { id: '3', label: 'Пицца', items: pizza, imageSrc: 'images/pepperoni.jpg' },
+    { id: '4', label: 'Паста и ризотто', items: pastaAndRisotto, imageSrc: '' },
+    { id: '5', label: 'Десерт', items: desert, imageSrc: '' },
   ];
 
   render() {
     return html`
       <section>
-        <vaadin-tabs
-          @selected-changed=${(e: CustomEvent<{ value: number }>) =>
-            (this.currentSectionID = e.detail.value)}
-        >
+        <vaadin-tabsheet>
+          <vaadin-tabs slot="tabs">
+            ${repeat(
+              this.sections,
+              (section) => section.id,
+              (section) =>
+                html`
+                  <vaadin-tab .id=${section.id}>${section.label}</vaadin-tab>
+                `
+            )}
+          </vaadin-tabs>
           ${repeat(
             this.sections,
             (section) => section.id,
             (section) =>
-              html`<vaadin-tab .value=${section.id} .title=${section.label}
-                >${section.label}</vaadin-tab
-              >`
+              html`
+                <tab-content tab=${section.id} .imageSrc=${section.imageSrc}>
+                  ${repeat(
+                    section.items,
+                    (item) => item.name,
+                    (item) => html`
+                      <menu-item-card
+                        .name=${item.name}
+                        .description=${item.description}
+                        .ingredients="${item.ingredients}"
+                      ></menu-item-card>
+                    `
+                  )}
+                </tab-content>
+              `
           )}
-        </vaadin-tabs>
-        ${repeat(
-          this.currentSection.items,
-          (item) => item.name,
-          (item) => html` <menu-item-card
-            .name=${item.name}
-            .description=${item.description}
-            .ingredients="${item.ingredients}"
-          ></menu-item-card>`
-        )}
+        </vaadin-tabsheet>
       </section>
     `;
   }

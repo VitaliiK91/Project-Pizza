@@ -44,7 +44,7 @@ export class AppIndex extends LitElement {
   render() {
     return html`
       <vaadin-app-layout>
-        <vaadin-tabs>
+        <vaadin-tabs vertical>
           <vaadin-tab><a href="${urlForName('home')}">Главная</a></vaadin-tab>
           <vaadin-tab><a href="${urlForName('menu')}">Меню</a></vaadin-tab>
           <vaadin-tab
