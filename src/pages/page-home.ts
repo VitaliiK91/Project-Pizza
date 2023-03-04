@@ -29,37 +29,20 @@ export class PageHome extends PageElement {
         <h1>Акции</h1>
         <deal-card-container>
           <deal-card
-            .name=${'Пепперони пицца'}
-            .description=${'Специальное предложение - пепперони пицца всего за 500 руб!'}
-            .price=${500}
-          >
-          </deal-card>
-          <deal-card
-            .name=${'Греческий салат'}
-            .description=${'Специальное предложение - греческий салат всего за 290 руб!'}
-            .price=${290}
+            .name=${'День рождения'}
+            .description=${'Празднуйте свой день рождения с нами и получите скидку 20% на заказ из меню кухни!'}
+            .deal=${'Скидка 20%'}
+            .image=${'images/happy-b-day.jpg'}
           >
           </deal-card>
 
           <deal-card
-            .name=${'Спагетти карбонара'}
-            .description=${'Специальное предложение - спагетти карбонара всего за 450 руб!'}
-            .price=${450}
+            .name=${'Самовывоз'}
+            .description=${'Забери свой заказ сам и получи сикдку 10%!'}
+            .deal=${'Скидка 10%'}
+            .image=${'images/pizza-to-go.jpg'}
           >
-          </deal-card>
-
-          <deal-card
-            .name=${'Десерт Тирамису'}
-            .description=${'Специальное предложение - десерт Тирамису всего за 250 руб!'}
-            .price=${250}
-          >
-          </deal-card>
-
-          <deal-card
-            .name=${'Чизкейк Нью-Йорк'}
-            .description=${'Специальное предложение - чизкейк Нью-Йорк всего за 350 руб!'}
-            .price=${350}
-          >
+            >
           </deal-card>
         </deal-card-container>
 
@@ -71,13 +54,6 @@ export class PageHome extends PageElement {
         >
           ></carousel-component
         >
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi,
-          delectus? Unde, sit. Fuga modi ea praesentium. Nemo dicta qui, magnam
-          cum dolorum excepturi beatae explicabo quidem fugiat ullam blanditiis
-          minima!
-        </p>
 
         <p>Here you can see <a href="/error">the not found page</a>.</p>
       </section>
