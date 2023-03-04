@@ -25,6 +25,14 @@ export const routes: Route[] = [
     },
   },
   {
+    path: '/deals',
+    name: 'deals',
+    component: 'page-deals',
+    action: async () => {
+      await import('../pages/page-deals.js');
+    },
+  },
+  {
     path: '/contact',
     name: 'contact',
     component: 'page-contact',

@@ -54,23 +54,6 @@ export class DealCard extends LitElement implements DealCardProps {
       background-position: center;
       background-size: cover;
     }
-
-    button {
-      margin-top: auto;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 8px;
-      background-color: #ff4500;
-      color: #fff;
-      font-size: 1rem;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    button:hover {
-      background-color: #e53e3e;
-    }
   `;
 
   @property({ type: String })
@@ -98,8 +81,8 @@ export class DealCard extends LitElement implements DealCardProps {
     return html`
       <div class="image" style="background-image: url(${this.image})"></div>
       <h2>${this.name}</h2>
-      <p>${this.description}</p>
       <h3 class="price">${this.deal}</h3>
+      <p>${this.description}</p>
     `;
   }
 }

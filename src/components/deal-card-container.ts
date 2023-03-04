@@ -20,7 +20,7 @@ export class DealCardContainer extends LitElement {
     .container {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 40px 20px;
       justify-content: center;
       padding-bottom: 50px;
     }
@@ -43,6 +43,11 @@ export class DealCardContainer extends LitElement {
       cursor: pointer;
       transition: background-color 0.3s ease-in-out;
     }
+    
+    button::before {
+      content: "📞";
+      margin-right: 0.5rem;
+    }
 
     button:hover {
       background-color: #e53e3e;
@@ -61,6 +66,7 @@ export class DealCardContainer extends LitElement {
       <div class="container">
         <slot></slot>
       </div>
+      <button>Заказать сейчас</button>
     `;
   }
 }

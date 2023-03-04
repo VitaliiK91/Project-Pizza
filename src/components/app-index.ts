@@ -83,6 +83,11 @@ export class AppIndex extends LitElement {
           <vaadin-tab><a href="${urlForName('home')}">Главная</a></vaadin-tab>
           <vaadin-tab><a href="${urlForName('menu')}">Меню</a></vaadin-tab>
           <vaadin-tab
+            ><a href="${urlForName('deals')}"
+              >Специальные предложения</a
+            ></vaadin-tab
+          >
+          <vaadin-tab
             ><a href="${urlForName('contact')}">Контакты</a></vaadin-tab
           >
         </vaadin-tabs>

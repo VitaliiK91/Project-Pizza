@@ -23,35 +23,7 @@ export class PageHome extends PageElement {
   `;
 
   render() {
-    return html`
-      <section>
-        <deal-card-container>
-          <deal-card
-            .name=${'День рождения'}
-            .description=${'Празднуйте свой день рождения с нами и получите скидку 20% на заказ из меню кухни!'}
-            .deal=${'Скидка 20%'}
-            .image=${'images/happy-b-day.jpg'}
-          >
-          </deal-card>
-
-          <deal-card
-            .name=${'Самовывоз'}
-            .description=${'Забери свой заказ сам и получи сикдку 10%!'}
-            .deal=${'Скидка 10%'}
-            .image=${'images/pizza-to-go.jpg'}
-          >
-          </deal-card>
-
-          <deal-card
-            .name=${'Пиво в подарок'}
-            .description=${'Купите одно пиво до 4PM и получите второе бесплатно'}
-            .deal=${'\u{1F37B}'}
-            .image=${'images/beers.jpg'}
-          >
-          </deal-card>
-        </deal-card-container>
-      </section>
-    `;
+    return html` <section></section> `;
   }
 
   meta() {
