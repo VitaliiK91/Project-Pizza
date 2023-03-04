@@ -19,8 +19,8 @@ export class DealCard extends LitElement implements DealCardProps {
       height: 400px;
       padding: 1rem;
       border-radius: 8px;
-      background-color: #fff;
-      box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+      background-color: var(--lumo-base-color);
+      box-shadow: 0 0 20px var(--lumo-box-shadow-l);
       transition: transform 0.3s ease-in-out;
     }
 
@@ -30,21 +30,23 @@ export class DealCard extends LitElement implements DealCardProps {
 
     h2 {
       margin: 0;
-      color: #ff4500;
-      font-size: 2rem;
+      color: var(--lumo-primary-text-color);
+      font-size: var(--lumo-font-size-xxl);
+      font-weight: var(--lumo-font-weight-bold);
     }
 
     p {
       margin: 0 0 1rem;
-      color: #666;
-      font-size: 1rem;
+      color: var(--lumo-secondary-text-color);
+      font-size: var(--lumo-font-size-m);
       text-align: center;
     }
 
     .price {
       margin-top: auto;
-      color: #ff4500;
-      font-size: 2.5rem;
+      color: var(--lumo-primary-color);
+      font-size: var(--lumo-font-size-xxxl);
+      font-weight: var(--lumo-font-weight-bold);
     }
 
     .image {

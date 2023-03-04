@@ -6,23 +6,23 @@ export class DealCardContainer extends LitElement {
       display: block;
       max-width: 960px;
       margin: 0 auto;
-      padding: 0 10px;
+      padding: 0 var(--lumo-space-s);
     }
 
     h2 {
-      margin: 20px 0;
-      color: #ff4500;
+      margin: var(--lumo-space-m) 0;
+      color: var(--lumo-primary-text-color);
       font-weight: 500;
-      font-size: 2.5rem;
+      font-size: var(--lumo-font-size-l);
       text-align: center;
     }
 
     .container {
       display: flex;
       flex-wrap: wrap;
-      gap: 40px 20px;
+      gap: var(--lumo-space-m) var(--lumo-space-s);
       justify-content: center;
-      padding-bottom: 50px;
+      padding-bottom: var(--lumo-space-l);
     }
 
     ::slotted(deal-card) {
@@ -33,24 +33,25 @@ export class DealCardContainer extends LitElement {
     button {
       display: block;
       margin: 0 auto;
-      padding: 1rem 2rem;
+      padding: var(--lumo-space-m) var(--lumo-space-l);
       border: none;
       border-radius: 8px;
-      background-color: #ff4500;
-      color: #fff;
-      font-size: 1.5rem;
+      background-color: var(--lumo-primary-color);
+      color: var(--lumo-contrast-50pct);
+      font-size: var(--lumo-font-size-s);
+      font-family: var(--lumo-font-family);
       text-transform: uppercase;
       cursor: pointer;
       transition: background-color 0.3s ease-in-out;
     }
-    
+
     button::before {
-      content: "📞";
-      margin-right: 0.5rem;
+      content: '📞';
+      margin-right: var(--lumo-space-s);
     }
 
     button:hover {
-      background-color: #e53e3e;
+      background-color: var(--lumo-primary-color-10pct);
     }
 
     @media (min-width: 768px) {

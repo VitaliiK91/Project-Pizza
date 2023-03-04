@@ -21,6 +21,11 @@ LICENSE file in the root directory of this source tree.
 
     <link rel="manifest" href="manifest.webmanifest" />
 
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
     <meta name="theme-color" content="#000000" />
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -72,28 +77,61 @@ LICENSE file in the root directory of this source tree.
       }
 
       :root {
-        /* Primary color */
-        --lumo-primary-color: #f44336;
-        --lumo-primary-color-50pct: rgb(244 67 54 / 50%);
-        --lumo-primary-color-10pct: rgb(244 67 54 / 10%);
+        /* Font */
+        --lumo-font-family: 'Pacifico', corbel, 'Lucida Grande',
+          'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans',
+          'Bitstream Vera Sans', 'Liberation Sans', verdana, 'Verdana Ref',
+          sans-serif;
+        --lumo-font-size: 1rem;
+        --lumo-font-size-xxxl: 3rem;
+        --lumo-font-size-xxl: 2.25rem;
+        --lumo-font-size-xl: 1.75rem;
+        --lumo-font-size-l: 1.375rem;
+        --lumo-font-size-m: 1.125rem;
+        --lumo-font-size-s: 1rem;
+        --lumo-font-size-xs: 0.875rem;
+        --lumo-font-size-xxs: 0.8125rem;
 
-        /* Secondary color */
-        --lumo-secondary-color: #616161;
-        --lumo-secondary-color-50pct: rgb(97 97 97 / 50%);
-        --lumo-secondary-color-10pct: rgb(97 97 97 / 10%);
+        /* Borders */
+        --lumo-border-radius: 0.5em;
 
-        /* Background color */
-        --lumo-base-color: #fff;
-
-        /* Text color */
-        --lumo-primary-text-color: #222;
-        --lumo-body-text-color: #222;
-        --lumo-secondary-text-color: #616161;
-        --lumo-disabled-text-color: #9b9b9b;
-
-        /* Border color */
-        --lumo-border-color: #e6e6e6;
-        --lumo-contrast: var(--lumo-secondary-color);
+        /* Colors */
+        --lumo-primary-text-color: #000;
+        --lumo-primary-color-50pct: rgb(255 140 0 / 50%);
+        --lumo-primary-color-10pct: rgb(255 140 0 / 10%);
+        --lumo-primary-color: hsl(33deg 100% 50%);
+        --lumo-error-text-color: rgb(231 24 24);
+        --lumo-error-color-50pct: rgb(231 24 24 / 50%);
+        --lumo-error-color-10pct: rgb(231 24 24 / 10%);
+        --lumo-success-text-color: rgb(159 61 40);
+        --lumo-success-color-50pct: rgb(62 229 170 / 50%);
+        --lumo-success-color-10pct: rgb(62 229 170 / 10%);
+        --lumo-error-color: hsl(0deg 81% 50%);
+        --lumo-success-color: hsl(159deg 76% 57%);
+        --lumo-shade-5pct: rgb(26 26 26 / 5%);
+        --lumo-shade-10pct: rgb(26 26 26 / 10%);
+        --lumo-shade-20pct: rgb(26 26 26 / 20%);
+        --lumo-shade-30pct: rgb(26 26 26 / 30%);
+        --lumo-shade-40pct: rgb(26 26 26 / 40%);
+        --lumo-shade-50pct: rgb(26 26 26 / 50%);
+        --lumo-shade-60pct: rgb(26 26 26 / 60%);
+        --lumo-shade-70pct: rgb(26 26 26 / 70%);
+        --lumo-shade-80pct: rgb(26 26 26 / 80%);
+        --lumo-shade-90pct: rgb(26 26 26 / 90%);
+        --lumo-shade: hsl(0deg 0% 10%);
+        --lumo-success-contrast-color: hsl(0deg 0% 10%);
+        --lumo-tint-5pct: rgb(155 255 153 / 5%);
+        --lumo-base-color: #fafafa;
+        --lumo-tint-10pct: rgb(155 255 153 / 10%);
+        --lumo-tint-20pct: rgb(155 255 153 / 20%);
+        --lumo-tint-30pct: rgb(155 255 153 / 30%);
+        --lumo-tint-40pct: rgb(155 255 153 / 40%);
+        --lumo-tint-50pct: rgb(155 255 153 / 50%);
+        --lumo-tint-60pct: rgb(155 255 153 / 60%);
+        --lumo-tint-70pct: rgb(155 255 153 / 70%);
+        --lumo-tint-80pct: rgb(155 255 153 / 80%);
+        --lumo-tint-90pct: rgb(155 255 153 / 90%);
+        --lumo-tint: hsl(33% 100% 80%);
       }
     </style>
   </head>
