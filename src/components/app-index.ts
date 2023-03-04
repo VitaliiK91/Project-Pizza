@@ -21,36 +21,6 @@ export class AppIndex extends LitElement {
       flex-direction: column;
     }
 
-    header {
-      display: flex;
-      align-items: center;
-      height: 53px;
-      padding: 0 1rem;
-      background-color: #24292e;
-    }
-
-    header nav {
-      display: flex;
-      flex: 1;
-      align-self: stretch;
-    }
-
-    header nav a {
-      display: flex;
-      align-items: center;
-      color: #fff;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    header nav a:not(:last-child) {
-      margin-right: 1rem;
-    }
-
-    header nav a:hover {
-      color: #bbb;
-    }
-
     main,
     main > * {
       display: flex;
@@ -65,7 +35,6 @@ export class AppIndex extends LitElement {
       font-size: 14px;
       text-align: center;
     }
-
 
     main:empty ~ footer {
       display: none;

@@ -1,10 +1,3 @@
-/**
- * Copyright (c) IBM, Corp. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import { html, css } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
@@ -53,26 +46,24 @@ export class PageMenu extends PageElement {
 
   render() {
     return html`
-      <vaadin-tabs
-        @selected-changed=${(e: CustomEvent<{ value: number }>) =>
-          (this.currentSectionID = e.detail.value)}
-      >
-        ${repeat(
-          this.sections,
-          (section) => section.id,
-          (section) =>
-            html`<vaadin-tab .value=${section.id} .title=${section.label}
-              >${section.label}</vaadin-tab
-            >`
-        )}
-      </vaadin-tabs>
       <section>
-        <h1>${this.currentSection?.label}</h1>
+        <vaadin-tabs
+          @selected-changed=${(e: CustomEvent<{ value: number }>) =>
+            (this.currentSectionID = e.detail.value)}
+        >
+          ${repeat(
+            this.sections,
+            (section) => section.id,
+            (section) =>
+              html`<vaadin-tab .value=${section.id} .title=${section.label}
+                >${section.label}</vaadin-tab
+              >`
+          )}
+        </vaadin-tabs>
         ${repeat(
           this.currentSection.items,
           (item) => item.name,
           (item) => html` <menu-item-card
-            .imageURL=${item.imageURL}
             .name=${item.name}
             .description=${item.description}
             .ingredients="${item.ingredients}"
