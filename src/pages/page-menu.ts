@@ -16,7 +16,7 @@ import {
 import '@vaadin/tabsheet';
 import '@vaadin/tabs';
 import '@vaadin/tabs/vaadin-tab.js';
-import '../components/tab-content.js';
+import '../components/menu-section.js';
 
 @customElement('page-menu')
 export class PageMenu extends PageElement {
@@ -31,12 +31,37 @@ export class PageMenu extends PageElement {
   `;
 
   private sections = [
-    { id: '0', label: 'Закуски', items: appetizers, imageSrc: '' },
-    { id: '1', label: 'Салаты', items: salads, imageSrc: '' },
-    { id: '2', label: 'Супы', items: soups, imageSrc: '' },
-    { id: '3', label: 'Пицца', items: pizza, imageSrc: 'images/pepperoni.jpg' },
-    { id: '4', label: 'Паста и ризотто', items: pastaAndRisotto, imageSrc: '' },
-    { id: '5', label: 'Десерт', items: desert, imageSrc: '' },
+    {
+      id: '0',
+      label: 'Закуски',
+      items: appetizers,
+      imageSrc: 'images/menu/meat-board.jpg',
+    },
+    {
+      id: '1',
+      label: 'Салаты',
+      items: salads,
+      imageSrc: 'images/menu/salad4.jpg',
+    },
+    { id: '2', label: 'Супы', items: soups, imageSrc: 'images/menu/soup2.jpg' },
+    {
+      id: '3',
+      label: 'Пицца',
+      items: pizza,
+      imageSrc: 'images/menu/pizza2.jpg',
+    },
+    {
+      id: '4',
+      label: 'Паста и ризотто',
+      items: pastaAndRisotto,
+      imageSrc: 'images/menu/pasta3.jpg',
+    },
+    {
+      id: '5',
+      label: 'Десерт',
+      items: desert,
+      imageSrc: 'images/menu/tiramisu.jpeg',
+    },
   ];
 
   render() {
@@ -53,24 +78,14 @@ export class PageMenu extends PageElement {
                 `
             )}
           </vaadin-tabs>
+
           ${repeat(
             this.sections,
             (section) => section.id,
             (section) =>
               html`
-                <tab-content tab=${section.id} .imageSrc=${section.imageSrc}>
-                  ${repeat(
-                    section.items,
-                    (item) => item.name,
-                    (item) => html`
-                      <menu-item-card
-                        .name=${item.name}
-                        .description=${item.description}
-                        .ingredients="${item.ingredients}"
-                      ></menu-item-card>
-                    `
-                  )}
-                </tab-content>
+                <menu-section tab=${section.id} .section=${section}>
+                </menu-section>
               `
           )}
         </vaadin-tabsheet>
