@@ -1,14 +1,16 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, query } from 'lit/decorators.js';
 
-import config from '../config.js';
-import { attachRouter, urlForName } from '../router/index.js';
+import { attachRouter } from '../router/index.js';
 import '@vaadin/app-layout';
 import '@vaadin/tabs';
 import '@vaadin/tabs/vaadin-tab.js';
+import '@vaadin/horizontal-layout';
+import '@vaadin/vertical-layout';
 
 import 'pwa-helper-components/pwa-install-button.js';
 import 'pwa-helper-components/pwa-update-available.js';
+import '../components/contact-info.js';
 
 @customElement('app-index')
 export class AppIndex extends LitElement {
@@ -19,7 +21,6 @@ export class AppIndex extends LitElement {
     :host {
       display: flex;
       flex-direction: column;
-      height: 100vh;
     }
 
     vaadin-tabs {
@@ -28,15 +29,12 @@ export class AppIndex extends LitElement {
         'Bitstream Vera Sans', 'Liberation Sans', verdana, 'Verdana Ref';
     }
 
-    main {
-      flex: 1;
-    }
-
     vaadin-app-layout {
-      height: 100%;
+      height: calc(100% - 200px);
     }
 
     footer {
+      height: 200px;
       padding: 1rem;
       background-color: #eee;
       color: #666;
@@ -52,19 +50,6 @@ export class AppIndex extends LitElement {
   render() {
     return html`
       <vaadin-app-layout>
-        <vaadin-tabs>
-          <vaadin-tab><a href="${urlForName('home')}">Главная</a></vaadin-tab>
-          <vaadin-tab><a href="${urlForName('menu')}">Меню</a></vaadin-tab>
-          <vaadin-tab
-            ><a href="${urlForName('deals')}"
-              >Специальные предложения</a
-            ></vaadin-tab
-          >
-          <vaadin-tab
-            ><a href="${urlForName('contact')}">Контакты</a></vaadin-tab
-          >
-        </vaadin-tabs>
-
         <pwa-install-button>
           <button>Install app</button>
         </pwa-install-button>
@@ -75,11 +60,17 @@ export class AppIndex extends LitElement {
 
         <!-- The main content is added / removed dynamically by the router -->
         <main id="outlet" role="main"></main>
-      </vaadin-app-layout>
 
-      <footer>
-        <span>Environment: ${config.environment}</span>
-      </footer>
+        <footer>
+          <contact-info
+            .hours=${'12:00 - 22:00'}
+            .phone=${'+7 (981) 264-58-24'}
+            .email=${'info@pizzacafe.com'}
+            .address=${'Приморская улица 64'}
+            .geo=${'59.960979, 29.418738'}
+          ></contact-info>
+        </footer>
+      </vaadin-app-layout>
     `;
   }
 

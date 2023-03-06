@@ -22,14 +22,6 @@ export class PageContact extends PageElement {
   render() {
     return html`
       <section>
-        <contact-info
-          hours="Ежедневно: 12:00 - 22:00"
-          phone="+7 (981) 264-58-24"
-          email="info@pizzacafe.com"
-          address="Приморская улица, 64, Лебяжье, Ленинградская область"
-          geo="59.960979, 29.418738"
-        ></contact-info>
-
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi,
           delectus? Unde, sit. Fuga modi ea praesentium. Nemo dicta qui, magnam

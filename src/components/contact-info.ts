@@ -1,19 +1,19 @@
 import { LitElement, html, css } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { property } from 'lit/decorators.js';
 
-@customElement('contact-info')
 export class ContactInfo extends LitElement {
   static get styles() {
     return css`
-      .card {
+      :host {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 16px;
-        border: 1px solid gray;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+
+        color: var(--lumo-primary-text-color);
+        font-weight: var(--lumo-font-weight-bold);
+        font-size: var(--lumo-font-size-xl);
       }
 
       .title {
@@ -40,7 +40,7 @@ export class ContactInfo extends LitElement {
     `;
   }
 
-  @property({ type: String })
+  @property({ type: String, attribute: true })
   hours = '';
   @property({ type: String })
   phone = '';
@@ -53,22 +53,19 @@ export class ContactInfo extends LitElement {
 
   render() {
     return html`
-      <div class="card">
-        <div class="title">Контактная информация</div>
-        <div class="hours">🕖 ${this.hours}</div>
-        <div class="phone">
-          📱 <a href="tel:${this.phone}">${this.phone}</a>
-        </div>
-        <div class="email">
-          📧 <a href="mailto:${this.email}">${this.email}</a>
-        </div>
-        <div class="address">
-          🌐
-          <a href="geo:${this.geo}?q=${encodeURIComponent(this.address)}"
-            >${this.address}</a
-          >
-        </div>
+      <div class="hours">🕖 ${this.hours}</div>
+      <div class="phone">📱 <a href="tel:${this.phone}">${this.phone}</a></div>
+      <div class="email">
+        📧 <a href="mailto:${this.email}">${this.email}</a>
+      </div>
+      <div class="address">
+        🌐
+        <a href="geo:${this.geo}?q=${encodeURIComponent(this.address)}"
+          >${this.address}</a
+        >
       </div>
     `;
   }
 }
+
+customElements.define('contact-info', ContactInfo);
