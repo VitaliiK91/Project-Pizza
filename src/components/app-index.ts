@@ -5,8 +5,6 @@ import { attachRouter } from '../router/index.js';
 import '@vaadin/app-layout';
 import '@vaadin/tabs';
 import '@vaadin/tabs/vaadin-tab.js';
-import '@vaadin/horizontal-layout';
-import '@vaadin/vertical-layout';
 
 import 'pwa-helper-components/pwa-install-button.js';
 import 'pwa-helper-components/pwa-update-available.js';
@@ -18,11 +16,6 @@ export class AppIndex extends LitElement {
   private main!: HTMLElement;
 
   static styles = css`
-    :host {
-      display: flex;
-      flex-direction: column;
-    }
-
     vaadin-tabs {
       --lumo-font-family: 'Pacifico', corbel, 'Lucida Grande',
         'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans',
@@ -30,11 +23,12 @@ export class AppIndex extends LitElement {
     }
 
     vaadin-app-layout {
-      height: calc(100% - 200px);
+      height: calc(100% - 200px - 2rem);
     }
 
     footer {
-      height: 200px;
+      min-height: 200px;
+      max-height: 200px;
       padding: 1rem;
       background-color: #eee;
       color: #666;
@@ -60,17 +54,17 @@ export class AppIndex extends LitElement {
 
         <!-- The main content is added / removed dynamically by the router -->
         <main id="outlet" role="main"></main>
-
-        <footer>
-          <contact-info
-            .hours=${'12:00 - 22:00'}
-            .phone=${'+7 (981) 264-58-24'}
-            .email=${'info@pizzacafe.com'}
-            .address=${'Приморская улица 64'}
-            .geo=${'59.960979, 29.418738'}
-          ></contact-info>
-        </footer>
       </vaadin-app-layout>
+
+      <footer>
+        <contact-info
+          .hours=${'12:00 - 22:00'}
+          .phone=${'+7 (981) 264-58-24'}
+          .email=${'info@pizzacafe.com'}
+          .address=${'Приморская улица 64'}
+          .geo=${'59.960979, 29.418738'}
+        ></contact-info>
+      </footer>
     `;
   }
 
