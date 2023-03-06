@@ -19,13 +19,21 @@ export class AppIndex extends LitElement {
     :host {
       display: flex;
       flex-direction: column;
+      height: 100vh;
     }
 
-    main,
-    main > * {
-      display: flex;
+    vaadin-tabs {
+      --lumo-font-family: 'Pacifico', corbel, 'Lucida Grande',
+        'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans',
+        'Bitstream Vera Sans', 'Liberation Sans', verdana, 'Verdana Ref';
+    }
+
+    main {
       flex: 1;
-      flex-direction: column;
+    }
+
+    vaadin-app-layout {
+      height: 100%;
     }
 
     footer {
@@ -44,7 +52,7 @@ export class AppIndex extends LitElement {
   render() {
     return html`
       <vaadin-app-layout>
-        <vaadin-tabs vertical>
+        <vaadin-tabs>
           <vaadin-tab><a href="${urlForName('home')}">Главная</a></vaadin-tab>
           <vaadin-tab><a href="${urlForName('menu')}">Меню</a></vaadin-tab>
           <vaadin-tab
@@ -68,6 +76,7 @@ export class AppIndex extends LitElement {
         <!-- The main content is added / removed dynamically by the router -->
         <main id="outlet" role="main"></main>
       </vaadin-app-layout>
+
       <footer>
         <span>Environment: ${config.environment}</span>
       </footer>

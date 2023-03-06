@@ -3,7 +3,6 @@ import { customElement } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 
 import { PageElement } from '../helpers/page-element.js';
-import '../components/menu-item.js';
 import {
   pizza,
   appetizers,
@@ -21,8 +20,19 @@ import '../components/menu-section.js';
 @customElement('page-menu')
 export class PageMenu extends PageElement {
   static styles = css`
-    section {
-      padding: 1rem;
+    :host {
+      display: block;
+      min-height: 100%;
+    }
+
+    vaadin-tabs {
+      --lumo-font-family: 'Pacifico', corbel, 'Lucida Grande',
+        'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans',
+        'Bitstream Vera Sans', 'Liberation Sans', verdana, 'Verdana Ref';
+    }
+
+    vaadin-tabsheet {
+      min-height: 100%;
     }
 
     menu-item-card {
@@ -66,30 +76,28 @@ export class PageMenu extends PageElement {
 
   render() {
     return html`
-      <section>
-        <vaadin-tabsheet>
-          <vaadin-tabs slot="tabs">
-            ${repeat(
-              this.sections,
-              (section) => section.id,
-              (section) =>
-                html`
-                  <vaadin-tab .id=${section.id}>${section.label}</vaadin-tab>
-                `
-            )}
-          </vaadin-tabs>
-
+      <vaadin-tabsheet>
+        <vaadin-tabs slot="tabs">
           ${repeat(
             this.sections,
             (section) => section.id,
             (section) =>
               html`
-                <menu-section tab=${section.id} .section=${section}>
-                </menu-section>
+                <vaadin-tab .id=${section.id}>${section.label}</vaadin-tab>
               `
           )}
-        </vaadin-tabsheet>
-      </section>
+        </vaadin-tabs>
+
+        ${repeat(
+          this.sections,
+          (section) => section.id,
+          (section) =>
+            html`
+              <menu-section tab=${section.id} .section=${section}>
+              </menu-section>
+            `
+        )}
+      </vaadin-tabsheet>
     `;
   }
 

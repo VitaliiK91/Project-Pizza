@@ -6,23 +6,23 @@ export class DealCardContainer extends LitElement {
       display: block;
       max-width: 960px;
       margin: 0 auto;
-      padding: 0 var(--lumo-space-s);
+      padding: 0 10px;
     }
 
     h2 {
-      margin: var(--lumo-space-m) 0;
-      color: var(--lumo-primary-text-color);
+      margin: 20px 0;
+      color: #ff4500;
       font-weight: 500;
-      font-size: var(--lumo-font-size-l);
+      font-size: 2.5rem;
       text-align: center;
     }
 
     .container {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--lumo-space-m) var(--lumo-space-s);
+      gap: 40px 20px;
       justify-content: center;
-      padding-bottom: var(--lumo-space-l);
+      padding-bottom: 50px;
     }
 
     ::slotted(deal-card) {
@@ -33,25 +33,24 @@ export class DealCardContainer extends LitElement {
     button {
       display: block;
       margin: 0 auto;
-      padding: var(--lumo-space-m) var(--lumo-space-l);
+      padding: 1rem 2rem;
       border: none;
       border-radius: 8px;
-      background-color: var(--lumo-primary-color);
-      color: var(--lumo-contrast-50pct);
-      font-size: var(--lumo-font-size-s);
-      font-family: var(--lumo-font-family);
+      background-color: #ff4500;
+      color: #fff;
+      font-size: 1.5rem;
       text-transform: uppercase;
       cursor: pointer;
       transition: background-color 0.3s ease-in-out;
     }
-
+    
     button::before {
-      content: '📞';
-      margin-right: var(--lumo-space-s);
+      content: "📞";
+      margin-right: 0.5rem;
     }
 
     button:hover {
-      background-color: var(--lumo-primary-color-10pct);
+      background-color: #e53e3e;
     }
 
     @media (min-width: 768px) {
@@ -63,6 +62,7 @@ export class DealCardContainer extends LitElement {
 
   render() {
     return html`
+      <h2>Специальные предложения</h2>
       <div class="container">
         <slot></slot>
       </div>
