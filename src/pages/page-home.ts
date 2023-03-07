@@ -13,13 +13,14 @@ import { PageElement } from '../helpers/page-element.js';
 import '../components/carousel.js';
 import '../components/deal-card.js';
 import '../components/deal-card-container.js';
+import '@vaadin/vertical-layout';
 
 @customElement('page-home')
 export class PageHome extends PageElement {
   static styles = css`
-    section {
-      padding: 1rem;
-    }
+carousel-component {
+    height: 50px;
+  }
   `;
 
   carouselItems = [
@@ -44,9 +45,7 @@ export class PageHome extends PageElement {
 
   render() {
     return html`
-      <section>
-        <carousel-component .items=${this.carouselItems}></carousel-component>
-
+      <vaadin-vertical-layout>
         <deal-card-container>
           <deal-card
             .name=${'Меню'}
@@ -60,7 +59,7 @@ export class PageHome extends PageElement {
           <deal-card .name=${'Доставка'} .image=${'images/happy-b-day.jpg'}>
           </deal-card>
         </deal-card-container>
-      </section>
+        </vaadin-vertical-layout>
     `;
   }
 

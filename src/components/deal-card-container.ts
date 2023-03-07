@@ -4,7 +4,6 @@ export class DealCardContainer extends LitElement {
   static styles = css`
     :host {
       display: block;
-      max-width: 960px;
       margin: 0 auto;
       padding: 0 var(--lumo-space-s);
     }
